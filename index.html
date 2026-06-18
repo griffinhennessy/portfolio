@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f8f8f8;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    header {
+      max-width: 960px;
+      margin: 0 auto 3rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.25rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+
+    .tab-btn:hover {
+      color: #1a1a1a;
+    }
+
+    .tab-btn.active {
+      color: #1a1a1a;
+      border-bottom-color: #1a1a1a;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .tab-panel {
+      display: none;
+      padding: 2rem 0;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .bio p {
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    @media (max-width: 640px) {
+      .bio {
+        flex-direction: column;
+      }
+      .bio img {
+        width: 100% !important;
+        max-width: 240px;
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: box-shadow 0.2s;
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #e0e0e0;
+    }
+
+    .gallery-item .info {
+      padding: 1rem;
+    }
+
+    .gallery-item .title {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .gallery-item .medium {
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio</h1>
+    <nav>
+      <button class="tab-btn active" data-tab="bio">Bio</button>
+      <button class="tab-btn" data-tab="painting">Painting</button>
+      <button class="tab-btn" data-tab="sculpture">Sculpture</button>
+      <button class="tab-btn" data-tab="drawing">Drawing</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tab-panel active" id="bio">
+      <div class="bio" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <img src="biophoto.jpg" alt="Bio Photo" style="width: 240px; height: auto; border-radius: 4px; flex-shrink: 0;">
+        <div id="bio-text">
+          <p style="margin-bottom: 1rem;" id="bio-bio"></p>
+          <p id="bio-statement"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="painting">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="img/painting-1.jpg" alt="2spheres">
+          <div class="info">
+            <div class="title">2spheres</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-2.jpg" alt="Camille">
+          <div class="info">
+            <div class="title">Camille</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-3.jpg" alt="Figues">
+          <div class="info">
+            <div class="title">Figues</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-4.jpg" alt="IMG_1511">
+          <div class="info">
+            <div class="title">IMG_1511</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-5.jpg" alt="IMG_5537">
+          <div class="info">
+            <div class="title">IMG_5537</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-6.jpg" alt="IMG_5622">
+          <div class="info">
+            <div class="title">IMG_5622</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-7.jpg" alt="Sink">
+          <div class="info">
+            <div class="title">Sink</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-8.jpg" alt="aiden">
+          <div class="info">
+            <div class="title">aiden</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-9.jpg" alt="beachparsnips">
+          <div class="info">
+            <div class="title">beachparsnips</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-10.jpg" alt="can2">
+          <div class="info">
+            <div class="title">can2</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-11.jpg" alt="fishstill">
+          <div class="info">
+            <div class="title">fishstill</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-12.jpg" alt="franshas">
+          <div class="info">
+            <div class="title">franshas</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-13.jpg" alt="jack">
+          <div class="info">
+            <div class="title">jack</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-14.jpg" alt="jtportrait2025">
+          <div class="info">
+            <div class="title">jtportrait2025</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-15.jpg" alt="lifepainting">
+          <div class="info">
+            <div class="title">lifepainting</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-16.jpg" alt="livemodle">
+          <div class="info">
+            <div class="title">livemodle</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-17.jpg" alt="nudeinstore">
+          <div class="info">
+            <div class="title">nudeinstore</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-18.jpg" alt="paintedpots">
+          <div class="info">
+            <div class="title">paintedpots</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-19.jpg" alt="pbr1">
+          <div class="info">
+            <div class="title">pbr1</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-20.jpg" alt="portrait1">
+          <div class="info">
+            <div class="title">portrait1</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-21.jpg" alt="portrait2">
+          <div class="info">
+            <div class="title">portrait2</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-22.jpg" alt="portrait3">
+          <div class="info">
+            <div class="title">portrait3</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-23.jpg" alt="still">
+          <div class="info">
+            <div class="title">still</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-24.jpg" alt="stillfruit">
+          <div class="info">
+            <div class="title">stillfruit</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-25.jpg" alt="tub">
+          <div class="info">
+            <div class="title">tub</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-26.jpg" alt="warmcoolstill">
+          <div class="info">
+            <div class="title">warmcoolstill</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/painting-27.jpg" alt="zac">
+          <div class="info">
+            <div class="title">zac</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="sculpture">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="img/sculpture-1.jpg" alt="IMG_5470">
+          <div class="info">
+            <div class="title">IMG_5470</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-2.jpg" alt="bottles">
+          <div class="info">
+            <div class="title">bottles</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-3.jpg" alt="chalus">
+          <div class="info">
+            <div class="title">chalus</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-4.jpg" alt="dioramma">
+          <div class="info">
+            <div class="title">dioramma</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-5.jpg" alt="dragonfly1">
+          <div class="info">
+            <div class="title">dragonfly1</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-6.jpg" alt="jugs">
+          <div class="info">
+            <div class="title">jugs</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-7.jpg" alt="mugluckprotects">
+          <div class="info">
+            <div class="title">mugluckprotects</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-8.jpg" alt="pots">
+          <div class="info">
+            <div class="title">pots</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-9.jpg" alt="rockinhorsemini">
+          <div class="info">
+            <div class="title">rockinhorsemini</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-10.jpg" alt="six1">
+          <div class="info">
+            <div class="title">six1</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/sculpture-11.jpg" alt="wirestuff">
+          <div class="info">
+            <div class="title">wirestuff</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="drawing">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="img/drawing-1.jpg" alt="armscrosssketch">
+          <div class="info">
+            <div class="title">armscrosssketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-2.jpg" alt="bigladysketch">
+          <div class="info">
+            <div class="title">bigladysketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-3.jpg" alt="figuredrawingoct2025">
+          <div class="info">
+            <div class="title">figuredrawingoct2025</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-4.jpg" alt="guysketch">
+          <div class="info">
+            <div class="title">guysketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-5.jpg" alt="handsketch">
+          <div class="info">
+            <div class="title">handsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-6.jpg" alt="lady2sitsketch">
+          <div class="info">
+            <div class="title">lady2sitsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-7.jpg" alt="landysketch4poses">
+          <div class="info">
+            <div class="title">landysketch4poses</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-8.jpg" alt="legsketch">
+          <div class="info">
+            <div class="title">legsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-9.jpg" alt="manlyingsketch">
+          <div class="info">
+            <div class="title">manlyingsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-10.jpg" alt="necksketch">
+          <div class="info">
+            <div class="title">necksketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-11.jpg" alt="openclosesketch">
+          <div class="info">
+            <div class="title">openclosesketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-12.jpg" alt="perspeciveskectch">
+          <div class="info">
+            <div class="title">perspeciveskectch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-13.jpg" alt="reductive">
+          <div class="info">
+            <div class="title">reductive</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-14.jpg" alt="sitonfloorsketch">
+          <div class="info">
+            <div class="title">sitonfloorsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-15.jpg" alt="sketchsketch">
+          <div class="info">
+            <div class="title">sketchsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-16.jpg" alt="sticksandstonesketch">
+          <div class="info">
+            <div class="title">sticksandstonesketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-17.jpg" alt="stillsketch">
+          <div class="info">
+            <div class="title">stillsketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-18.jpg" alt="thinkersketch">
+          <div class="info">
+            <div class="title">thinkersketch</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/drawing-19.jpg" alt="thisassholesketck">
+          <div class="info">
+            <div class="title">thisassholesketck</div>
+            <div class="medium"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = {
+      bio:      document.getElementById('bio'),
+      painting: document.getElementById('painting'),
+      sculpture: document.getElementById('sculpture'),
+      drawing:  document.getElementById('drawing'),
+    };
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        Object.values(panels).forEach(p => p.classList.remove('active'));
+        panels[btn.dataset.tab].classList.add('active');
+      });
+    });
+
+    fetch('bio.txt').then(r => r.text()).then(t => {
+      document.getElementById('bio-bio').textContent = t;
+    });
+    fetch('statement.txt').then(r => r.text()).then(t => {
+      document.getElementById('bio-statement').textContent = t;
+    });
+  </script>
+</body>
+</html>
